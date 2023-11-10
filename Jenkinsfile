@@ -1,6 +1,9 @@
 pipeline {
     agent {
         label 'app'
+    } 
+    triggers{
+        pollSCM '* * * * *'
     }
 
     stages {
