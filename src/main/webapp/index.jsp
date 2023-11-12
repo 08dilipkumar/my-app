@@ -5,8 +5,8 @@
 <title> welcome </title> 
 </head> 
 <body>
-<h1> Hello world </h1>  
-<h6> welcome to my website </h6>
+<h1> Hello world </h1> 
+<p> welcome to website </p>
 
 </body>
 </html>
