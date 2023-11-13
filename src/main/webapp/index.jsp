@@ -10,8 +10,8 @@
     } 
     .demo{
         color: white; 
-        margin-top: 50%; 
-        
+        margin-top: 25%; 
+
     }
 </style>
 </head> 
