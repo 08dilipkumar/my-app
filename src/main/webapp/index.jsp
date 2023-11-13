@@ -6,11 +6,16 @@
 
 <style>
     .Home{
-        background-color: brown;
+        background-color: cadetblue;
+    } 
+    .demo{
+        color: white; 
+        margin-top: 50%; 
+        
     }
 </style>
 </head> 
-<body>
+<body class="Home">
     <center><h1 class="demo">Hello world </h1></center>
 </body>
 </html>
