@@ -1,25 +1,27 @@
 pipeline {
-    agent any
-    triggers{
+    agent {
+        label 'app'
+    } 
+
+    triggers{ 
         pollSCM '* * * * *'
     }
 
     stages {
         stage('Clone') {
             steps {
-                git branch: 'ui', url: 'https://github.com/08dilipkumar/my-app.git'
+                git branch: 'main', url: 'https://github.com/08dilipkumar/my-app.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn package'
             }
         } 
-        stage('Build ') {
+        stage('Deploy') {
             steps {
-                sh 'mvn install'
+                sh 'scp target/app.war dilip@172.17.0.3:/home/Dk/apache-tomcat-9.0.82/webapps'
             }
-        } 
-       
-        stage('Nexus') {
-            steps {
-                nexusArtifactUploader artifacts: [[artifactId: 'app', classifier: '', file: 'target/app-1.0-SNAPSHOT.war', type: 'war']], credentialsId: 'Nexus', groupId: 'app', nexusUrl: '172.17.0.1:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'http://172.17.0.1:8081/repository/MVN/', version: '1.0-SNAPSHOT'
-        } 
         }
     }
 }
