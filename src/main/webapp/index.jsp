@@ -10,7 +10,7 @@
     } 
     .demo{
         color: white; 
-        margin-top: 25%; 
+        margin-top: 25%;     
 
     }
 </style>
