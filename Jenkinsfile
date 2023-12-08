@@ -49,6 +49,7 @@ pipeline {
         stage('DOCKER'){
             steps {
                 sh 'docker build -t my-app:$BUILD_NUMBER .'
+                sh 'echo $BUILD_NUMBER-1'
             }
         }
     }
