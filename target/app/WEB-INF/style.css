@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<!-- Created By CodingNepal - www.codingnepalweb.com -->
-<html lang="en" dir="ltr">
-  <head> 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -121,36 +116,3 @@ nav .menu{
   background: white;
   color: black;
 }
-    </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Website Layout | CodingLab</title> 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-   </head>
-<body>
-  <nav>
-    <div class="menu">
-      <div class="logo">
-        <a href="#">CodingLab</a>
-      </div>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Feedback</a></li>
-      </ul>
-    </div>
-  </nav>
-  <div class="img"></div>
-  <div class="center">
-    <div class="title">Create Amazing Website</div>
-    <div class="sub_title">Pure HTML & CSS Only</div>
-    <div class="btns">
-      <button>Learn11</button> 
-      <button>join</button>
-    </div>
-  </div>
-</body>
-</html>
