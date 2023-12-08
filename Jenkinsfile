@@ -47,9 +47,12 @@ pipeline {
             }
         }   
         stage('DOCKER'){
+            perameters {
+                old_build_num='expr $BUILD_NUMBER - 1'
+            }
             steps {
                 sh 'docker build -t my-app:$BUILD_NUMBER .'
-                sh 'echo $BUILD_NUMBER-1'
+                sh "docker rmi my-app:$old_build_num"
             }
         }
     }
