@@ -48,12 +48,13 @@ pipeline {
         }   
         stage('DOCKER'){
             environment {
-                old_build_num= $BUILD_NUMBER - 1
+                build_num= $BUILD_NUMBER
             }
             
             steps {
                 sh 'docker build -t my-app:$BUILD_NUMBER .'
                 script {
+                    def old_build_num=$build_num-1
                     echo $old_build_num
                 }
                 sh "docker rmi my-app:$old_build_num"
