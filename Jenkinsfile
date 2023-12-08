@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-     stages {
+    stages {
         stage('CLONE') {
             steps {
                 git branch: 'main', url: 'https://github.com/08dilipkumar/my-app.git'
@@ -48,7 +48,7 @@ pipeline {
         }   
         stage('DOCKER'){
             steps {
-                sh 'docker build -t my-app .'
+                sh 'docker build -t my-app:$BUILD_NUMBER .'
             }
         }
     }
