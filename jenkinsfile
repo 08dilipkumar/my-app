@@ -38,7 +38,7 @@ pipeline {
         }  
          stage('DOCKER IMAGE') {
             steps {
-                sh 'docker build -t app:$build_num'
+                sh 'docker build -t my-app:${BUILD_NUMBER}'
             }  
          }   
     } 
