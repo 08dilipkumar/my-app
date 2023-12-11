@@ -45,20 +45,11 @@ pipeline {
                 }
 
             }
-        }   
-        stage('DOCKER'){
-            environment {
-                build_num= $BUILD_NUMBER
-            }
-            
+        }  
+         stage('DOCKER IMAGE') {
             steps {
-                sh 'docker build -t my-app:$BUILD_NUMBER .'
-                script {
-                    def old_build_num=$build_num-1
-                    echo $old_build_num
-                }
-                sh "docker rmi my-app:$old_build_num"
-            }
-        }
-    }
+                sh 'docker build -t app:$build_num'
+            }  
+         }   
+    } 
 }
