@@ -17,8 +17,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target> 
-    <sonar.host.url>http://localhost:9000/</sonar.host.url>
-    <sonar.token>squ_90e37091dfaaaa558d3c930826a561884613abda </sonar.token> 
   </properties>
   <dependencies>
     <dependency>
@@ -29,18 +27,6 @@
     </dependency>
   </dependencies> 
  
- <distributionManagement> 
-  
-   
-  <snapshotRepository> 
-   <id>nexus</id> 
-   <name>app-nexus-1</name>
-   <url>http://localhost:8082/repository/app-snapshot/</url>
-  </snapshotRepository> 
-
-
- </distributionManagement>
-
   <build>
     <finalName>app</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
