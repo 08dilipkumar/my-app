@@ -43,7 +43,7 @@ pipeline {
         }  
         stage('DOCKER CONTAINER') {
             steps {
-                sh 'docker run -itd -p 8081:8081 app'
+                sh 'docker run -itd -p 8081:8081 app:${BUILD_NUMBER}'
             }  
         }  
     } 
