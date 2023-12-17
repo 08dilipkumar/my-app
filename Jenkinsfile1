@@ -9,7 +9,7 @@ pipeline {
         }  
         stage('K8s') {
             steps {
-                sh 'sudo kubectl apply -f my-app-k3s.yaml'
+                sh 'kubectl apply -f my-app-k3s.yaml'
             }  
         }    
     } 
