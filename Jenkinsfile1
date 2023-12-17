@@ -1,13 +1,13 @@
 pipeline {
     agent any 
 
-    stages {
+    stages{
         stage('DOCKER PULL') {
             steps {
                 sh 'docker pull 07dilip/app:1'
             }  
         }  
-        stage('DOCKER PULL') {
+        stage('K8s') {
             steps {
                 sh 'sudo kubectl apply -f my-app-k3s.yaml'
             }  
