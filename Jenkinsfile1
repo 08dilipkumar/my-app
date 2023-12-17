@@ -1,0 +1,11 @@
+pipeline {
+    agent any 
+
+    stages {
+        stage('DOCKER PULL') {
+            steps {
+                sh 'docker pull 07dilip/app:1'
+            }  
+        }   
+    } 
+}
