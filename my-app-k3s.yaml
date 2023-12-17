@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: myapp-container
-    image: 07dilip/app:01
+    image: 07dilip/app:1
     ports:
     - containerPort: 8080
 
