@@ -39,7 +39,6 @@ pipeline {
         stage('DOCKER IMAGE') {
             steps {
                 sh 'docker build -t 07dilip/app:${BUILD_NUMBER} .'
-                sh 'docker push 07dilip/app:${BUILD_NUMBER}'
             }  
         }   
     } 
