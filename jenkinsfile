@@ -19,7 +19,7 @@ pipeline {
                 sh 'mvn test'
             }
         } 
-         stage('Checkstyle Analysis') {
+        stage('Checkstyle Analysis') {
             steps{
                 sh 'mvn checkstyle:checkstyle'
             }
@@ -36,7 +36,7 @@ pipeline {
                 }
 
             }
-        }  
+        } 
         stage('DOCKER IMAGE') {
             steps {
                 sh 'docker build -t 07dilip/app:${BUILD_NUMBER} .'
