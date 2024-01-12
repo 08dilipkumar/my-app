@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: my-app-container
-          image: 07dilip/app11:latest
+          image: 07dilip/app:1
           ports:
             - containerPort: 8080 
