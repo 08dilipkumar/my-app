@@ -53,7 +53,12 @@ pipeline {
                 sh 'docker push 07dilip/app:${BUILD_NUMBER}'
             } 
         }
-    } 
+    }  
+    stage('DEPLOY-K8s'){
+        steps{
+            sh 'helm install my-app-release app-0.1.0.tgz'
+        }
+    }
 
 } 
 }
