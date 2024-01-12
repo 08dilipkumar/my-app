@@ -39,10 +39,21 @@ pipeline {
         } 
         stage('DOCKER IMAGE') {
             steps {
-                sh 'docker build -t 07dilip/app:${BUILD_NUMBER} . ' 
-                sh 'docker push 07dilip/app:${BUILD_NUMBER}'
+                sh 'docker build -t 07dilip/app:${BUILD_NUMBER} .  '
             }  
-        } 
+        }  
+        stage('docker push') {
+            steps{
+                script{
+                    withCredentials([string(credentialsId: 'myapp', variable: 'docker')]) {
+                        script{
+                            sh 'docker login -u 07dilip -p ${docker}'
+                        } 
+                } 
+                sh 'docker push 07dilip/app:${BUILD_NUMBER}'
+            } 
+        }
     } 
 
+} 
 }
