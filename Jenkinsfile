@@ -39,14 +39,10 @@ pipeline {
         } 
         stage('DOCKER IMAGE') {
             steps {
-                sh 'docker build -t 07dilip/app:${BUILD_NUMBER} .'
+                sh 'docker build -t 07dilip/app:${BUILD_NUMBER} . ' 
+                sh 'docker push 07dilip/app:${BUILD_NUMBER}'
             }  
         } 
-      stage('DOCKER IMAGE') {
-            steps {
-                sh 'helm install my-app webapp-0.1.0.tgz'
-            }  
-        }   
     } 
 
 }
