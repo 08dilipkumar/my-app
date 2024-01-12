@@ -54,11 +54,11 @@ pipeline {
             } 
         }
     }  
-    stage('DEPLOY-K8s'){
-        steps{
-            sh 'helm install my-app-release app-0.1.0.tgz'
+        stage('DEPLOY-K8s'){
+            steps{
+                sh 'helm install my-app-release app-0.1.0.tgz'
+            }
         }
-    }
 
-} 
+    } 
 }
