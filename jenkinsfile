@@ -40,7 +40,7 @@ pipeline {
         stage('K8s') {
             steps {
                 script{
-                 sh 'K8s.sh'
+                 sh './K8s.sh'
             }
         }
     } 
