@@ -36,29 +36,13 @@ pipeline {
                 }
 
             }
-        } 
-        stage('DOCKER IMAGE') {
-            steps {
-                sh 'docker build -t 07dilip/app:${BUILD_NUMBER} .  '
-            }  
         }  
-        stage('docker push') {
-            steps{
+        stage('K8s') {
+            steps {
                 script{
-                    withCredentials([string(credentialsId: 'myapp', variable: 'docker')]) {
-                        script{
-                            sh 'docker login -u 07dilip -p ${docker}'
-                        } 
-                } 
-                sh 'docker push 07dilip/app:${BUILD_NUMBER}'
-            } 
-        }
-    }  
-        stage('DEPLOY-K8s'){
-            steps{
-                sh 'helm install my-app-release app-0.1.0.tgz'
+                 sh './K8s.sh'
             }
         }
-
     } 
+} 
 }
